@@ -16,21 +16,28 @@ public class PauseMenu : MonoBehaviour
     {
     }
 
+    void OnEnable()
+    {
+        Time.timeScale = 1;
+        Debug.Log("scene loaded");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
+
+            if (paused)
+            {
+                AcvivateMenu();
+            }
+            else
+            {
+                DeactivateMenu();
+            }
         }
 
-        if (paused)
-        {
-            AcvivateMenu();
-        }
-        else
-        {
-            DeactivateMenu();
-        }
     }
 
     public void AcvivateMenu()

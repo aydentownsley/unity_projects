@@ -13,7 +13,7 @@ public class WinTrigger : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        // Time.timeScale = 0;
+        Time.timeScale = 0f;
         timetext.fontSize = 60;
         timetext.color = Color.green;
         time_script.enabled = false;

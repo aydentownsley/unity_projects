@@ -7387,6 +7387,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7623766357470222430, guid: dc8d127707d307d499a96bbae4b0a33b, type: 3}
   m_PrefabInstance: {fileID: 7623766359287863022}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1820004017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820004016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f185cc083323d47b1bf2d6f20bb19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1820919677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9002,10 +9014,14 @@ PrefabInstance:
     - target: {fileID: 7623766358190729633, guid: dc8d127707d307d499a96bbae4b0a33b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 525085184}
+      objectReference: {fileID: 1820004017}
     - target: {fileID: 7623766358190729633, guid: dc8d127707d307d499a96bbae4b0a33b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623766358190729633, guid: dc8d127707d307d499a96bbae4b0a33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7623766358190729635, guid: dc8d127707d307d499a96bbae4b0a33b, type: 3}
       propertyPath: m_IsActive
