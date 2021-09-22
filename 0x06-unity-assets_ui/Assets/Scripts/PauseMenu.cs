@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     private bool paused = false;
+    private string scene;
+    private int sceneIndex;
 
     void Start()
     {
@@ -67,5 +69,17 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Next()
+    {
+        scene = PlayerPrefs.GetString("scene");
+        sceneIndex = int.Parse(scene.Substring(5, 2));
+        if (sceneIndex <= 2)
+            sceneIndex += 1;
+        else
+            sceneIndex = 1;
+        SceneManager.LoadScene("Level0" + sceneIndex);
+
     }
 }
