@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 startposition = new Vector3(0, 25, 0);
     private bool yAxis = false;
     public GameObject player;
+    public GameObject Freelook;
 
     private void Start()
     {
@@ -25,37 +26,17 @@ public class PlayerController : MonoBehaviour
             yAxis = false;
 
         GameObject.Find("Freelook").GetComponent<CinemachineFreeLook>().m_YAxis.m_InvertInput = yAxis;
-        // controller = gameObject.AddComponent<CharacterController>();
-        // controller.skinWidth = 0.001f;
     }
 
     void FixedUpdate()
     {
-        // groundedPlayer = controller.isGrounded;
-        // if (groundedPlayer && playerVelocity.y < 0)
-        //     playerVelocity.y = 0f;
-
-        // Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        // controller.Move(move * Time.deltaTime * playerSpeed);
-
-        // if (move != Vector3.zero)
-        // {
-        //     gameObject.transform.forward = move;
-        // }
-
-        // // Changes the height position of the player..
-        // if (Input.GetButton("Jump") && groundedPlayer)
-        // {
-        //     playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        // }
-
-        // playerVelocity.y += gravityValue * Time.deltaTime;
-        // controller.Move(playerVelocity * Time.deltaTime);
 
         if (transform.position.y < -25)
         {
+            Freelook.GetComponent<CinemachineFreeLook>().enabled = false;
             gameObject.GetComponent<CharacterController>().enabled = false;
             transform.position = startposition;
+            Freelook.GetComponent<CinemachineFreeLook>().enabled = true;
             gameObject.GetComponent<CharacterController>().enabled = true;
         }
     }
