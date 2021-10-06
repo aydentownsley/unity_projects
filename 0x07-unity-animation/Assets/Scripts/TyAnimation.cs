@@ -33,6 +33,9 @@ public class TyAnimation : MonoBehaviour
             anim.SetBool("Falling", true);
 
         if (Player.transform.position.y > 0 && Player.transform.position.y < 1)
+        {
+            anim.SetTrigger("Grounded");
             anim.SetBool("Falling", false);
+        }
     }
 }
