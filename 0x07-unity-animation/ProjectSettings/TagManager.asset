@@ -9,6 +9,7 @@ TagManager:
   - CinemachineTarget
   - ground
   - moving
+  - Start
   layers:
   - Default
   - TransparentFX

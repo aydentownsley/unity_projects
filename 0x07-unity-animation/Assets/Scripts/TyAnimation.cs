@@ -29,9 +29,10 @@ public class TyAnimation : MonoBehaviour
         else
             anim.SetBool("IsJumping", false);
 
-        if (Player.transform.position.y < -5)
+        if (Player.transform.position.y < -10)
             anim.SetBool("Falling", true);
-        else if (Player.transform.position == Vector3.zero)
+
+        if (Player.transform.position.y > 0 && Player.transform.position.y < 1)
             anim.SetBool("Falling", false);
     }
 }

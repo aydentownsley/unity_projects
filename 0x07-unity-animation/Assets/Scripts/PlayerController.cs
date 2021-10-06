@@ -43,11 +43,9 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision");
         Debug.Log(other.gameObject.name);
         if (other.gameObject.CompareTag("moving"))
         {
-            Debug.Log("moving");
             player.transform.SetParent(other.gameObject.transform, true);
         }
     }
