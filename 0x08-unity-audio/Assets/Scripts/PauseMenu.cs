@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using StarterAssets;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     private bool paused = false;
     private string scene;
     private int sceneIndex;
+    public AudioMixerSnapshot audio_paused;
+    public AudioMixerSnapshot audio_unpaused;
 
     void Start()
     {
@@ -31,10 +34,12 @@ public class PauseMenu : MonoBehaviour
             if (paused)
             {
                 AcvivateMenu();
+                Lowpass();
             }
             else
             {
                 DeactivateMenu();
+                Lowpass();
             }
         }
 
@@ -65,6 +70,7 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Resume");
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        audio_unpaused.TransitionTo(0.01f);
     }
 
     public void Restart()
@@ -76,5 +82,13 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void Lowpass()
+    {
+        if (Time.timeScale == 0)
+            audio_paused.TransitionTo(0.01f);
+        else
+            audio_unpaused.TransitionTo(0.01f);
     }
 }

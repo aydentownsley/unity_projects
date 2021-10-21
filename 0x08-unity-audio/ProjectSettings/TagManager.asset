@@ -10,6 +10,8 @@ TagManager:
   - ground
   - moving
   - Start
+  - Rock
+  - Grass
   layers:
   - Default
   - TransparentFX

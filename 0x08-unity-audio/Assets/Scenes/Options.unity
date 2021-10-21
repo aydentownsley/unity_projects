@@ -212,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418967399}
   - component: {fileID: 418967400}
+  - component: {fileID: 418967401}
   m_Layer: 5
   m_Name: BGMSlider
   m_TagString: Untagged
@@ -288,13 +289,38 @@ MonoBehaviour:
   m_FillRect: {fileID: 975113377}
   m_HandleRect: {fileID: 582527579}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 418967401}
+        m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &418967401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418967398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9408a5714ca0a304db95000fbf7408b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24100000, guid: 5781576d68c1b5e40aa0baa8dd810550, type: 2}
 --- !u!1 &426206391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1112,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yAxisToggle: {fileID: 1104309655}
+--- !u!1001 &974724336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.89424455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7106501
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.1332664
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273182, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449062802962273183, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
+      propertyPath: m_Name
+      value: MenuSFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99a9684a4b9ccd242ad91cc6ab2a82ff, type: 3}
 --- !u!1 &975113376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1548,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
