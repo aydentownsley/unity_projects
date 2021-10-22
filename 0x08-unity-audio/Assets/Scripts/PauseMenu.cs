@@ -34,14 +34,17 @@ public class PauseMenu : MonoBehaviour
             if (paused)
             {
                 AcvivateMenu();
-                Lowpass();
+                audio_paused.TransitionTo(0.01f);
             }
             else
             {
                 DeactivateMenu();
-                Lowpass();
+                audio_unpaused.TransitionTo(0.01f);
             }
         }
+
+        if (!paused)
+            audio_unpaused.TransitionTo(0.01f);
 
     }
 
@@ -82,13 +85,5 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    void Lowpass()
-    {
-        if (Time.timeScale == 0)
-            audio_paused.TransitionTo(0.01f);
-        else
-            audio_unpaused.TransitionTo(0.01f);
     }
 }

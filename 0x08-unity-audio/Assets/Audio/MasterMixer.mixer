@@ -89,8 +89,14 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 1c27ca9998d0fa14eae5d247db18628f
+    name: SFX_Amb
   - guid: 1965877fef86f7840b43c20db400779b
     name: BGM
+  - guid: 68b7cc58adebf7f4a8327844c02670fa
+    name: SFX_Land
+  - guid: 3452cf9ebbdfcba4398c5757e87128f3
+    name: SFX_Run
   m_AudioMixerGroupViews:
   - guids:
     - 3b49338ef6cfeac488617b1723ff2c4e
@@ -100,7 +106,7 @@ AudioMixerController:
     - 1c57f7a845168604880337a96ae58ff0
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -2254591402170919428}
+  m_TargetSnapshot: {fileID: 4307999768509480177}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

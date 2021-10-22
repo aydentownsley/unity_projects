@@ -2,13 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    private float BGM;
+    private float SFX;
+    public AudioMixer Mixer;
     // Start is called before the first frame update
     void Start()
     {
-
+        BGM = PlayerPrefs.GetFloat("SFX_Volume");
+        SFX = PlayerPrefs.GetFloat("BGM_Volume");
+        Mixer.SetFloat("SFX_Run", Mathf.Log10(SFX) * 20 - 20);
+        Mixer.SetFloat("SFX_Land", Mathf.Log10(SFX) * 20 + 2);
+        Mixer.SetFloat("SFX_Amb", Mathf.Log10(SFX) * 20 + 5);
+        Mixer.SetFloat("BGM", Mathf.Log10(BGM) * 20);
     }
 
     // Update is called once per frame
